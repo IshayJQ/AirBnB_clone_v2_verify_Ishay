@@ -9,26 +9,32 @@ app = Flask(__name__)
 def hello():
     return "Hello HBNB!\n"
 
+
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
     return "HBNB!\n"
 
+
 @app.route("/c/<text>", strict_slashes=False)
 def displaytext(text):
-		return f"c {text.replace('_', ' ')}\n"
+    return f"c {text.replace('_', ' ')}\n"
+
 
 @app.route("/python/<text>", strict_slashes=False)
 @app.route("/python/", strict_slashes=False)
 def displayPythonText(text='is_cool'):
-		return f"python {text.replace('_', ' ')}\n"
+    return f"python {text.replace('_', ' ')}\n"
+
 
 @app.route("/number/<int:n>", strict_slashes=False)
 def displayNumber(n):
-			return f"{n} is a number\n"
+    return f"{n} is a number\n"
+
 
 @app.route("/number_template/<int:n>", strict_slashes=False)
 def displayNumberTemplate(n):
-			return render_template('5-number.html', n=n)
+    return render_template('5-number.html', n=n)
+
 
 @app.route("/number_odd_or_even/<int:n>", strict_slashes=False)
 def displayNumberEvenOdd(n):
@@ -37,5 +43,6 @@ def displayNumberEvenOdd(n):
     else:
         return render_template('6-number_odd_or_even.html', n=n, text='odd')
 
+
 if __name__ == "__main__":
-	app.run(host='0.0.0.0', port=5000, debug=True )
+    app.run(host='0.0.0.0', port=5000, debug=True )
