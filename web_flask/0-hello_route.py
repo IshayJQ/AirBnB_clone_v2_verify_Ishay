@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 
+"""This module print the message Hello·HBNB"""
 from flask import Flask
 
 
 app = Flask(__name__)
 
-"""
-Return the message
-"""
+"""Return the message"""
 @app.route("/", strict_slashes=False)
 def hello():
     return "Hello HBNB!"
