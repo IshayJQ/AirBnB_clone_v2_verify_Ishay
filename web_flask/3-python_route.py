@@ -30,7 +30,7 @@ def displaytext(text):
 @app.route("/python/", strict_slashes=False)
 def displayPythonText(text='is cool'):
     """Display “Python”, followed by the value of the text variable"""
-    return f"python {text.replace('_', ' ')}"
+    return f"Python {text.replace('_', ' ')}"
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port=5000, debug=True)
