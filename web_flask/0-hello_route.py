@@ -1,17 +1,16 @@
 #!/usr/bin/python3
 
-"""This module print the message"""
+"""
+Stars a Flask web application
+"""
 from flask import Flask
-
 
 app = Flask(__name__)
 
 
-"""Return the message"""
-
-
 @app.route("/", strict_slashes=False)
 def hello():
+    """Returns Hello HBNB!"""
     return "Hello HBNB!"
 
 if __name__ == "__main__":

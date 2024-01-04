@@ -1,29 +1,29 @@
 #!/usr/bin/python3
 
-"""This module 2-c_route.py  print the message"""
+"""
+Stars a Flask web application
+"""
+
 from flask import Flask
 
 app = Flask(__name__)
 
-"""Return the message Hello HBNB"""
-
 
 @app.route("/", strict_slashes=False)
 def hello():
+    """Returns Hello HBNB"""
     return "Hello HBNB"
-
-"""Return the message HBNB"""
 
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
+    """Returns HBNB"""
     return "HBNB"
-
-"""Return·the·message replace text"""
 
 
 @app.route("/c/<text>", strict_slashes=False)
 def displayText(text):
+    """Display “C” followed by the value of the text variable"""
     return f"c {text.replace('_', ' ')}"
 
 if __name__ == "__main__":

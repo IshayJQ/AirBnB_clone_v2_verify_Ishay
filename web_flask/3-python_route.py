@@ -1,37 +1,35 @@
 #!/usr/bin/python3
 
-"""This module 3-python_route.py  print the message"""
+"""
+Starts a Flask web application
+"""
 from flask import Flask
 
 app = Flask(__name__)
 
-"""Return the message Hello HBNB"""
-
 
 @app.route("/", strict_slashes=False)
 def hello():
+    """Returns Hello HBNB!"""
     return "Hello HBNB!"
-
-"""Return the message HBNB"""
 
 
 @app.route("/hbnb", strict_slashes=False)
 def hbnb():
+    """Returns HBNB"""
     return "HBNB"
-
-"""Return·the·message replace text"""
 
 
 @app.route("/c/<text>", strict_slashes=False)
 def displaytext(text):
+    """Display “C” followed by the value of the text variable"""
     return f"c {text.replace('_', ' ')}"
-
-"""Return·the·message replace text or not"""
 
 
 @app.route("/python/<text>", strict_slashes=False)
 @app.route("/python/", strict_slashes=False)
 def displayPythonText(text='is_cool'):
+    """Display “Python”, followed by the value of the text variable"""
     return f"python {text.replace('_', ' ')}"
 
 if __name__ == "__main__":
